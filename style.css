@@ -1,0 +1,47 @@
+body {
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+    background-color: #F5E1A4;
+  }
+  
+  .hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 10%;
+    flex-wrap: wrap;
+  }
+  
+  .hero-texto {
+    max-width: 500px;
+  }
+  
+  .hero-texto h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    font-family: 'Nunito', sans-serif;
+    color: #302325;
+    margin-bottom: 20px;
+  }
+  
+  .hero-texto p {
+    font-size: 1.2rem;
+    margin-bottom: 32px;
+    font-family: 'Inter', sans-serif;
+    color: #302325;
+  }
+  
+  .btn-principal {
+    padding: 12px 24px;
+    background-color: #BC162A;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+  }
+  
+  .hero-imagen img {
+    width: 350px;
+    max-width: 100%;
+  }
+  
