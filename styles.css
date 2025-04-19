@@ -1,0 +1,30 @@
+    /*llamado final*/    
+    .cta-section {
+        background-color: #EE7F27; /* naranja */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px 60px;
+        color: white;
+        font-family: 'Nunito', sans-serif;
+      }
+      
+      .cta-text h2 {
+        margin: 0;
+        font-size: 28px;
+        font-weight: bold;
+      }
+      
+      .btn-crear-cuenta {
+        background-color: #BC162A; /* rojo vino */
+        color: white;
+        padding: 12px 24px;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: 600;
+        transition: background-color 0.3s ease;
+      }
+      
+      .btn-crear-cuenta:hover {
+        background-color: #BC162A;
+      }
