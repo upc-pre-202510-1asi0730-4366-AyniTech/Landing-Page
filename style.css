@@ -170,3 +170,16 @@ body {
   line-height: 1.4;
   margin: 0;
 }
+
+footer {
+  background-color: #302325;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.social-icons img {
+  width: 24px;
+  margin: 0 10px;
+  vertical-align: middle;
+}
