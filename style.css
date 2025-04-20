@@ -1,11 +1,17 @@
-body {
+/* RESET GENERAL */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   font-family: 'Nunito', sans-serif;
   background-color: #F5E1A4;
   color: #333;
 }
 
+/* HEADER */
 .header {
   display: flex;
   align-items: center;
@@ -58,12 +64,14 @@ body {
   font-weight: 600;
 }
 
+/* HERO */
 .hero {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 50px 10%;
   flex-wrap: wrap;
+  background-color: #fff1c4;
 }
 
 .hero-texto {
@@ -97,6 +105,7 @@ body {
   max-width: 100%;
 }
 
+/* NOSOTROS */
 .nosotros {
   text-align: center;
   padding: 40px 20px;
@@ -171,6 +180,7 @@ body {
   margin: 0;
 }
 
+/* FOOTER */
 footer {
   background-color: #302325;
   color: white;
@@ -182,4 +192,41 @@ footer {
   width: 24px;
   margin: 0 10px;
   vertical-align: middle;
+}
+
+/* FEATURES */
+.features {
+  display: flex;
+  justify-content: space-around;
+  padding: 60px 20px;
+  background-color: white;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.feature {
+  text-align: center;
+  max-width: 250px;
+}
+
+.icon {
+  background-color: #e5dba3;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h3 {
+  color: #2b2b2b;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+p {
+  color: #333;
+  font-size: 14px;
 }
