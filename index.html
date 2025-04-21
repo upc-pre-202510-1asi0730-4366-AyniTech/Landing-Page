@@ -16,11 +16,12 @@
     </div>
     <div class="header-right">
       <nav class="nav">
-        <ul>
-          <li><a href="#">Inicio</a></li>
-          <li><a href="#">Características</a></li>
-          <li><a href="#">Precios</a></li>
-          <li><a href="#">Nosotros</a></li>
+        <div class="hamburger" id="hamburger">☰</div>
+        <ul class="navbar">
+           <li class="navbar__ul"><a href="#hero">Inicio</a></li>
+           <li class="navbar__ul"><a href="#features">Características</a></li>
+           <li class="navbar__ul"><a href="#Planes">Precios</a></li>
+           <li class="navbar__ul"><a href="#nosotros">Nosotros</a></li>
         </ul>
       </nav>
       <a class="btn-empezar" href="#">Empezar</a>
@@ -28,7 +29,7 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="hero">
+  <section id="hero" class="hero">
     <div class="hero-texto">
       <h1>Controla tu <br>inventario con inteligencia</h1>
       <p>Automatiza, analiza y optimiza tus procesos con StockWise</p>
@@ -40,7 +41,7 @@
   </section>
 
   <!-- Features Section -->
-  <section class="features">
+  <section id="features"  class="features">
     <div class="feature">
       <div class="icon">
         <img src="assets/package_1005852.png" alt="Gestión de stock" width="60">
@@ -128,7 +129,7 @@
   </section>
 
   <!-- Nosotros Section -->
-  <section class="nosotros">
+  <section id="nosotros" class="nosotros">
     <h1>Nosotros</h1>
     <p class="subtitulo">Escuche a trabajadores y empleadores que han tenido éxito con StockWise</p>
 
@@ -171,13 +172,34 @@
 
   <!-- Footer Section -->
   <footer>
-    <p>© 2025 StockWise. Todos los derechos reservados.</p>
-    <div class="social-icons">
-      <a href="#"><img src="assets/facebook.png" alt="Facebook" width="24"></a>
-      <a href="#"><img src="assets/twitter.png" alt="Twitter" width="24"></a>
-      <a href="#"><img src="assets/instagram.png" alt="Instagram" width="24"></a>
+    <div class="footer-container">
+      <div class="footer-info">
+        <h2>StockWise</h2>
+        <p>Soluciones inteligentes para la gestión de inventario</p>
+      </div>
+      <div class="footer-social">
+        <h3>Redes</h3>
+        <div class="social-icons">
+          <a href="#"><img src="assets/facebook.png" alt="Facebook"></a>
+          <a href="#"><img src="assets/twitter.png" alt="Twitter"></a>
+          <a href="#"><img src="assets/instagram.png" alt="Instagram"></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 StockWise. Todos los derechos reservados.</p>
     </div>
   </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.querySelector('.nav ul');
+
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    }); 
+  </script>
+
 
 </body>
 </html>

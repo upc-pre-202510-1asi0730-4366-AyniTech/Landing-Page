@@ -9,17 +9,26 @@ body {
   font-family: 'Nunito', sans-serif;
   background-color: #F5E1A4;
   color: #333;
+  padding-top: 80px;
 }
 
 /* HEADER */
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 1rem 2rem;
   background-color: #F5E1A4;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
+.hamburger {
+  display: none;
+}
 .header-right {
   display: flex;
   align-items: center;
@@ -182,7 +191,7 @@ body {
 
 /*llamado final*/    
 .cta-section {
-  background-color: #EE7F27; /* naranja */
+  background-color: #EE7F27;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -198,7 +207,7 @@ body {
 }
 
 .btn-crear-cuenta {
-  background-color: #BC162A; /* rojo vino */
+  background-color: #BC162A; 
   color: white;
   padding: 12px 24px;
   text-decoration: none;
@@ -207,24 +216,57 @@ body {
   transition: background-color 0.3s ease;
 }
 
-.btn-crear-cuenta:hover {
-  background-color: #BC162A;
-}
-
 /* FOOTER */
 footer {
   background-color: #302325;
   color: white;
+  padding: 40px 20px 20px;
+  font-family: 'Nunito', sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-info h2 {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.footer-info p {
+  font-size: 1em;
+  color: #e0e0e0;
+}
+
+.footer-social h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.social-icons a img {
+  width: 28px;
+  height: 28px;
+  margin-right: 12px;
+  transition: transform 0.3s ease;
+}
+
+.social-icons a img:hover {
+  transform: scale(1.1);
+}
+
+.footer-bottom {
   text-align: center;
-  padding: 20px;
+  margin-top: 30px;
+  font-size: 0.9em;
+  color: white;  
 }
-
-.social-icons img {
-  width: 24px;
-  margin: 0 10px;
-  vertical-align: middle;
-}
-
 /* FEATURES */
 .features {
   display: flex;
@@ -386,6 +428,24 @@ p {
   transform: scale(1.05);
 }
 
+.nav ul li:last-child {
+  border-bottom: none;
+}
+
+.nav ul li a {
+  color: #302325;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.hamburger {
+  font-size: 26px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: #302325;
+}
+
 @media (max-width: 768px) {
   .details__plans {
     width: 90%;
@@ -394,4 +454,91 @@ p {
   .plans {
     gap: 3em;
   }
+   /* HEADER */
+   .header {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+  .nav {
+    position: relative;
+  }
+
+  .header-right {
+    flex-direction: row;
+    justify-content: flex-end;
+    width: auto;
+  }
+
+  .btn-empezar {
+    align-self: flex-start;
+  }
+
+  /* HERO */
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .hero-texto {
+    max-width: 100%;
+  }
+
+  .hero-texto h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-texto p {
+    font-size: 1rem;
+  }
+
+  .hero-imagen {
+    margin-top: 30px;
+  }
+
+  .hero-imagen img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
+  .cta-text h2 {
+    font-size: 1.5rem;
+  }
+  .btn-crear-cuenta {
+    font-size: 1rem;
+    width: 100%;
+  }
+  
+  .nav ul li {
+    padding: 10px 20px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .nav ul li:last-child {
+    border-bottom: none;
+  }
+  .nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background-color: #fff;
+    padding: 12px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    z-index: 999;
+    width: 180px;
+  } 
+  .nav ul.active {
+    display: flex;
+  }
+  .hamburger {
+    display: block;
+  }
+  
+  
 }
+
+
