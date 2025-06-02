@@ -7,198 +7,343 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter&family=Nunito:wght@700&display=swap" rel="stylesheet">
 </head>
+<script>
+  const translations = {
+    es: {
+      "nav.init": "Inicio",
+      "nav.characters": "Características",
+      "nav.prices": "Precios",
+      "nav.we": "Nosotros",
+      "nav.start": "Empezar",
+      "hero.title": "Controla tu <br>inventario con inteligencia",
+      "hero.subtitle": "Automatiza, analiza y optimiza tus procesos con StockWise",
+      "hero.button": "Empieza gratis",
+      "bd.characters1.title": "Gestión de stock<br>en tiempo real",
+      "bd.characters1.description": "Controla tu inventario al instante y toma mejores decisiones.",
+      "bd.characters2.title": "Reportes inteligentes",
+      "bd.characters2.description": "Visualiza datos clave para optimizar tu negocio.",
+      "bd.characters3.title": "Integración con<br>tu sistema",
+      "bd.characters3.description": "Conecta fácilmente con tus herramientas actuales.",
+      "bd.plans.title": "Planes",
+      "bd.plans.description": "Encuentra el plan perfecto para tus necesidades",
+      "bd.plans1.title": "Plan Gratuito",
+      "bd.plans1.description1": "Hasta 30 productos registrados",
+      "bd.plans1.description2": "1 usuario administrador",
+      "bd.plans1.description3": "Clasificación por etiquetas",
+      "bd.plans1.description4": "Búsqueda y filtrado de productos",
+      "bd.plans1.description5": "Publicidad discreta",
+      "bd.plans1.description6": "Empieza gratis",
+      "bd.plans2.tile": "★ Recomendado",
+      "bd.plans2.description1": "Plan Emprendedor",
+      "bd.plans2.description2": "Hasta 200 productos",
+      "bd.plans2.description3": "Hasta 2 usuarios (admin + asistente)",
+      "bd.plans2.description4": "Estadísticas básicas",
+      "bd.plans2.description5": "Clasificación por categorías",
+      "bd.plans2.description6":   "Sin publicidad",
+      "bd.plans2.description7":   "Acceder",
+      "bd.plans3.title": "Plan Negocio",
+      "bd.plans3.description1": "Productos ilimitados",
+      "bd.plans3.description2":   "Usuarios ilimitados",
+      "bd.plans3.description3": "Estadísticas completas y gráficas",
+      "bd.plans3.description4": "Historial de movimientos",
+      "bd.plans3.description5": "Alertas por stock mínimo",
+      "bd.plans3.description6": "Acceder",
+      "bd.we.title": "Nosotros",
+      "bd.we.description": "Escuche a trabajadores y empleadores que han tenido éxito con StockWise",
+      "bd.we.comment1": "Gracias a StockWise ahora sé exactamente qué productos necesitan reabastecimiento. ¡Mucho más orden y menos estrés!",
+      "bd.we.comment2": "StockWise transformó completamente la forma en que gestionamos el inventario. Es como tener un asistente 24/7.",
+      "bd.we.description1": "Empieza a mejorar tu <br> inventario hoy mismo",
+      "bd.we.description2":   "Crear cuenta gratis",
+      "bd.footer.description": "Soluciones inteligentes para la gestión de inventario",
+      "bd.footer.description1": "Redes",
+      "bd.footer.description2": "© 2025 StockWise. Todos los derechos reservados.",
+      // Agrega más claves aquí...
+    },
+    en: {
+      "nav.init": "Home",
+      "nav.characters": "Features",
+      "nav.prices": "Prices",
+      "nav.we": "About Us",
+      "nav.start": "Get Started",
+      "hero.title": "Control your <br>inventory intelligently",
+      "hero.subtitle": "Automate, analyze and optimize your processes with StockWise",
+      "hero.button": "Start free",
+      "bd.characters1.title": "<br>Real-time</br> inventory management",
+      "bd.characters1.description": "Instantly monitor your inventory and make better decisions.",
+      "bd.characters2.title": "Smart Reports",
+      "bd.characters2.description": "Visualize key data to optimize your business.",
+      "bd.characters3.title": "Integration with <br>your system",
+      "bd.characters3.description": "Easily connect with your current tools.",
+      "bd.plans.title": "Plans",
+      "bd.plans.description": "Find the perfect plan for your needs",
+      "bd.plans1.title": "Free Plan",
+      "bd.plans1.description1": "Up to 30 registered products",
+      "bd.plans1.description2": "1 admin user",
+      "bd.plans1.description3": "Tag sorting",
+      "bd.plans1.description4": "Product search and filtering",
+      "bd.plans1.description5": "Discreet advertising",
+      "bd.plans1.description6": "Get started for free",
+      "bd.plans2.tile": "★ Recommended",
+      "bd.plans2.description1": "Entrepreneur Plan",
+      "bd.plans2.description2": "Up to 200 products",
+      "bd.plans2.description3": "Up to 2 users (admin + assistant)",
+      "bd.plans2.description4": "Basic statistics",
+      "bd.plans2.description5": "Category sorting",
+      "bd.plans2.description6":   "No ads",
+      "bd.plans2.description7":   "Access",
+      "bd.plans3.title": "Business Plan",
+      "bd.plans3.description1": "Unlimited products",
+      "bd.plans3.description2":   "Unlimited users",
+      "bd.plans3.description3": "Complete statistics and graphs",
+      "bd.plans3.description4": "Transaction history",
+      "bd.plans3.description5": "Low stock alerts",
+      "bd.plans3.description6": "Access",
+      "bd.we.title": "About Us",
+      "bd.we.description": "Hear from workers and employers who have had success with StockWise",
+      "bd.we.comment1": "Thanks to StockWise, I now know exactly which products need restocking. Much more order and less stress!",
+      "bd.we.comment2": "StockWise completely transformed the way we manage inventory. It's like having a 24/7 assistant.",
+      "bd.we.description1": "Start improving <br> your inventory today",
+      "bd.we.description2":   "Create a free account",
+      "bd.footer.description": "Smart solutions for inventory management",
+      "bd.footer.description1": "Social networks",
+      "bd.footer.description2": "© 2025 StockWise. All rights reserved.",
+      // Agrega más claves aquí...
+    }
+  };
+
+  function setLanguage(lang) {
+    document.documentElement.lang = lang;
+
+    document.querySelectorAll("[data-i18n]").forEach((el) => {
+      const key = el.getAttribute("data-i18n");
+      const translation = translations[lang][key];
+
+      if (translation) {
+        if (el.tagName.toLowerCase() === "input") {
+          el.placeholder = translation;
+        } else {
+          el.innerHTML = translation;
+        }
+      }
+    });
+
+    document.querySelectorAll(".language-switch button").forEach(btn => {
+      btn.classList.toggle("active", btn.textContent.toLowerCase() === lang);
+    });
+
+    localStorage.setItem("language", lang); // Guardar preferencia
+  }
+
+  // Aplicar idioma guardado al cargar
+  window.addEventListener("DOMContentLoaded", () => {
+    const lang = localStorage.getItem("language") || "es";
+    setLanguage(lang);
+  });
+</script>
 <body>
 
-  <!-- Header Section -->
-  <header class="header">
-    <div class="logo">
-      <img src="assets/image 3.png" alt="Logo StockWise" />
+<!-- Header Section -->
+<header class="header">
+  <div class="logo">
+    <img src="assets/image 3.png" alt="Logo StockWise" />
+  </div>
+  <div class="header-right">
+    <nav class="nav">
+      <div class="hamburger" id="hamburger">☰</div>
+      <ul class="navbar">
+        <li class="navbar__ul">
+          <a data-i18n="nav.init"  href="#hero">Inicio</a>
+        </li>
+        <li class="navbar__ul">
+          <a href="#features" data-i18n="nav.characters">Características</a>
+        </li>
+        <li class="navbar__ul">
+          <a href="#Planes" data-i18n="nav.prices">Precios</a>
+        </li>
+        <li class="navbar__ul">
+          <a href="#nosotros" data-i18n="nav.we">Nosotros</a>
+        </li>
+        <li class="navbar__ul language-switch">
+          <button onclick="setLanguage('es')">ES</button>
+          <button onclick="setLanguage('en')">EN</button>
+        </li>
+      </ul>
+    </nav>
+    <a data-i18n="nav.start" class="btn-empezar" href="#">Empezar</a>
+  </div>
+</header>
+
+<!-- Hero Section -->
+<section id="hero" class="hero">
+  <div class="hero-texto">
+    <h1 data-i18n="hero.title">Controla tu <br>inventario con inteligencia</h1>
+    <p data-i18n="hero.subtitle">Automatiza, analiza y optimiza tus procesos con StockWise</p>
+    <a data-i18n="hero.button" href="#" class="btn-principal">Empieza gratis</a>
+  </div>
+  <div class="hero-imagen">
+    <img src="assets/image 4.png" alt="Dashboard StockWise" />
+  </div>
+</section>
+
+<!-- Features Section -->
+<section id="features"  class="features">
+  <div class="feature">
+    <div class="icon">
+      <img src="assets/package_1005852.png" alt="Gestión de stock" width="60">
     </div>
-    <div class="header-right">
-      <nav class="nav">
-        <div class="hamburger" id="hamburger">☰</div>
-        <ul class="navbar">
-           <li class="navbar__ul"><a href="#hero">Inicio</a></li>
-           <li class="navbar__ul"><a href="#features">Características</a></li>
-           <li class="navbar__ul"><a href="#Planes">Precios</a></li>
-           <li class="navbar__ul"><a href="#nosotros">Nosotros</a></li>
+    <h3 data-i18n="bd.characters1.title" >Gestión de stock<br>en tiempo real</h3>
+    <p data-i18n="bd.characters1.description" >Controla tu inventario al instante y toma mejores decisiones.</p>
+  </div>
+  <div class="feature">
+    <div class="icon">
+      <img src="assets/statistics_4719714.png" alt="Reportes inteligentes" width="70">
+    </div>
+    <h3 data-i18n="bd.characters2.title" >Reportes inteligentes</h3>
+    <p data-i18n="bd.characters2.description" >Visualiza datos clave para optimizar tu negocio.</p>
+  </div>
+  <div class="feature">
+    <div class="icon">
+      <img src="assets/turn-right.png" alt="Integración con tu sistema" width="60">
+    </div>
+    <h3 data-i18n="bd.characters3.title" >Integración con<br>tu sistema</h3>
+    <p data-i18n="bd.characters3.description" >Conecta fácilmente con tus herramientas actuales.</p>
+  </div>
+</section>
+
+<!-- Plans Section -->
+<section id="Planes" class="plans__section">
+  <div class="max__size__width">
+    <header class="section__header">
+      <h2 data-i18n="bd.plans.title" class="section__title">Planes</h2>
+      <h3 data-i18n="bd.plans.description" class="section__subtitle">Encuentra el plan perfecto para tus necesidades</h3>
+    </header>
+
+    <div class="plans">
+      <!-- Plan Gratuito -->
+      <div class="details__plans" data-type="FREE">
+        <span class="plan__badge plan__badge--placeholder"></span>
+        <div class="cont__details__letters">
+          <span data-i18n="bd.plans1.title" class="price">Plan Gratuito</span>
+          <span class="type">s/.0</span>
+        </div>
+        <ul class="details__info">
+          <li data-i18n="bd.plans1.description1" >Hasta 30 productos registrados</li>
+          <li data-i18n="bd.plans1.description2" >1 usuario administrador</li>
+          <li data-i18n="bd.plans1.description3" >Clasificación por etiquetas</li>
+          <li data-i18n="bd.plans1.description4" >Búsqueda y filtrado de productos</li>
+          <li data-i18n="bd.plans1.description5" >Publicidad discreta</li>
         </ul>
-      </nav>
-      <a class="btn-empezar" href="#">Empezar</a>
-    </div>
-  </header>
-
-  <!-- Hero Section -->
-  <section id="hero" class="hero">
-    <div class="hero-texto">
-      <h1>Controla tu <br>inventario con inteligencia</h1>
-      <p>Automatiza, analiza y optimiza tus procesos con StockWise</p>
-      <a href="#" class="btn-principal">Empieza gratis</a>
-    </div>
-    <div class="hero-imagen">
-      <img src="assets/image 4.png" alt="Dashboard StockWise" />
-    </div>
-  </section>
-
-  <!-- Features Section -->
-  <section id="features"  class="features">
-    <div class="feature">
-      <div class="icon">
-        <img src="assets/package_1005852.png" alt="Gestión de stock" width="60">
-      </div>
-      <h3>Gestión de stock<br>en tiempo real</h3>
-      <p>Controla tu inventario al instante y toma mejores decisiones.</p>
-    </div>
-    <div class="feature">
-      <div class="icon">
-        <img src="assets/statistics_4719714.png" alt="Reportes inteligentes" width="70">
-      </div>
-      <h3>Reportes inteligentes</h3>
-      <p>Visualiza datos clave para optimizar tu negocio.</p>
-    </div>
-    <div class="feature">
-      <div class="icon">
-        <img src="assets/turn-right.png" alt="Integración con tu sistema" width="60">
-      </div>
-      <h3>Integración con<br>tu sistema</h3>
-      <p>Conecta fácilmente con tus herramientas actuales.</p>
-    </div>
-  </section>
-
-  <!-- Plans Section -->
-  <section id="Planes" class="plans__section">
-    <div class="max__size__width">
-      <header class="section__header">
-        <h2 class="section__title">Planes</h2>
-        <h3 class="section__subtitle">Encuentra el plan perfecto para tus necesidades</h3>
-      </header>
-
-      <div class="plans">
-        <!-- Plan Gratuito -->
-        <div class="details__plans" data-type="FREE">
-          <span class="plan__badge plan__badge--placeholder"></span>
-          <div class="cont__details__letters">
-            <span class="price">Plan Gratuito</span>
-            <span class="type">s/.0</span>
-          </div>
-          <ul class="details__info">
-            <li>Hasta 30 productos registrados</li>
-            <li>1 usuario administrador</li>
-            <li>Clasificación por etiquetas</li>
-            <li>Búsqueda y filtrado de productos</li>
-            <li>Publicidad discreta</li>
-          </ul>
-          <button class="plans__button">Empieza gratis</button>
-        </div>
-
-        <!-- Plan Emprendedor -->
-        <div class="details__plans" data-type="EMPRENDEDOR">
-          <span class="plan__badge">★ Recomendado</span>
-          <div class="cont__details__letters">
-            <span class="price">Plan Emprendedor</span>
-            <span class="type">s/.30</span>
-          </div>
-          <ul class="details__info">
-            <li>Hasta 200 productos</li>
-            <li>Hasta 2 usuarios (admin + asistente)</li>
-            <li>Estadísticas básicas</li>
-            <li>Clasificación por categorías</li>
-            <li>Sin publicidad</li>
-          </ul>
-          <button class="plans__button">Acceder</button>
-        </div>
-
-        <!-- Plan Negocio -->
-        <div class="details__plans" data-type="NEGOCIO">
-          <span class="plan__badge plan__badge--placeholder"></span>
-          <div class="cont__details__letters">
-            <span class="price">Plan Negocio</span>
-            <span class="type">s/.70</span>
-          </div>
-          <ul class="details__info">
-            <li>Productos ilimitados</li>
-            <li>Usuarios ilimitados</li>
-            <li>Estadísticas completas y gráficas</li>
-            <li>Historial de movimientos</li>
-            <li>Alertas por stock mínimo</li>
-          </ul>
-          <button class="plans__button">Acceder</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Nosotros Section -->
-  <section id="nosotros" class="nosotros">
-    <h1>Nosotros</h1>
-    <p class="subtitulo">Escuche a trabajadores y empleadores que han tenido éxito con StockWise</p>
-
-    <div class="testimonios">
-      <div class="tarjeta">
-        <div class="info-usuario">
-          <strong>John Doe</strong> <span class="rol">Worker</span>
-        </div>
-        <div class="comentario-con-foto">
-          <img src="assets/imgVaron.jpg" alt="Foto de John Doe" />
-          <p class="mensaje">
-            Gracias a StockWise ahora sé exactamente qué productos necesitan reabastecimiento. ¡Mucho más orden y menos estrés!
-          </p>
-        </div>
+        <button data-i18n="bd.plans1.description6" class="plans__button">Empieza gratis</button>
       </div>
 
-      <div class="tarjeta">
-        <div class="info-usuario">
-          <strong>Sarah Miller</strong> <span class="rol">Worker</span>
+      <!-- Plan Emprendedor -->
+      <div class="details__plans" data-type="EMPRENDEDOR">
+        <span data-i18n="bd.plans2.tile" class="plan__badge">★ Recomendado</span>
+        <div class="cont__details__letters">
+          <span data-i18n="bd.plans2.description1" class="price">Plan Emprendedor</span>
+          <span class="type">s/.30</span>
         </div>
-        <div class="comentario-con-foto">
-          <img src="assets/imgMujer.jpg" alt="Foto de Sarah Miller" />
-          <p class="mensaje">
-            StockWise transformó completamente la forma en que gestionamos el inventario. Es como tener un asistente 24/7.
-          </p>
+        <ul class="details__info">
+          <li data-i18n="bd.plans2.description2" >Hasta 200 productos</li>
+          <li data-i18n="bd.plans2.description3" >Hasta 2 usuarios (admin + asistente)</li>
+          <li data-i18n="bd.plans2.description4" >Estadísticas básicas</li>
+          <li data-i18n="bd.plans2.description5" >Clasificación por categorías</li>
+          <li data-i18n="bd.plans2.description6" >Sin publicidad</li>
+        </ul>
+        <button data-i18n="bd.plans2.description7" class="plans__button">Acceder</button>
+      </div>
+
+      <!-- Plan Negocio -->
+      <div class="details__plans" data-type="NEGOCIO">
+        <span class="plan__badge plan__badge--placeholder"></span>
+        <div class="cont__details__letters">
+          <span data-i18n="bd.plans3.title" class="price">Plan Negocio</span>
+          <span class="type">s/.70</span>
         </div>
+        <ul class="details__info">
+          <li data-i18n="bd.plans3.description1" >Productos ilimitados</li>
+          <li data-i18n="bd.plans3.description2" >Usuarios ilimitados</li>
+          <li data-i18n="bd.plans3.description3" >Estadísticas completas y gráficas</li>
+          <li data-i18n="bd.plans3.description4" >Historial de movimientos</li>
+          <li data-i18n="bd.plans3.description5" >Alertas por stock mínimo</li>
+        </ul>
+        <button data-i18n="bd.plans3.description6" class="plans__button">Acceder</button>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CTA Section -->
-  <section class="cta-section">
-    <div class="cta-text">
-      <h2>Empieza a mejorar tu <br> inventario hoy mismo</h2>
-    </div>
-    <div class="cta-button">
-      <a href="#" class="btn-crear-cuenta">Crear cuenta gratis</a>
-    </div>
-  </section>
+<!-- Nosotros Section -->
+<section id="nosotros" class="nosotros">
+  <h1 data-i18n="bd.we.title" >Nosotros</h1>
+  <p data-i18n="bd.we.description" class="subtitulo">Escuche a trabajadores y empleadores que han tenido éxito con StockWise</p>
 
-  <!-- Footer Section -->
-  <footer>
-    <div class="footer-container">
-      <div class="footer-info">
-        <h2>StockWise</h2>
-        <p>Soluciones inteligentes para la gestión de inventario</p>
+  <div class="testimonios">
+    <div class="tarjeta">
+      <div class="info-usuario">
+        <strong>John Doe</strong> <span class="rol">Worker</span>
       </div>
-      <div class="footer-social">
-        <h3>Redes</h3>
-        <div class="social-icons">
-          <a href="#"><img src="assets/facebook.png" alt="Facebook"></a>
-          <a href="#"><img src="assets/twitter.png" alt="Twitter"></a>
-          <a href="#"><img src="assets/instagram.png" alt="Instagram"></a>
-        </div>
+      <div class="comentario-con-foto">
+        <img src="assets/imgVaron.jpg" alt="Foto de John Doe" />
+        <p data-i18n="bd.we.comment1" class="mensaje">
+          Gracias a StockWise ahora sé exactamente qué productos necesitan reabastecimiento. ¡Mucho más orden y menos estrés!
+        </p>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>© 2025 StockWise. Todos los derechos reservados.</p>
+
+    <div class="tarjeta">
+      <div class="info-usuario">
+        <strong>Sarah Miller</strong> <span class="rol">Worker</span>
+      </div>
+      <div class="comentario-con-foto">
+        <img src="assets/imgMujer.jpg" alt="Foto de Sarah Miller" />
+        <p data-i18n="bd.we.comment2" class="mensaje">
+          StockWise transformó completamente la forma en que gestionamos el inventario. Es como tener un asistente 24/7.
+        </p>
+      </div>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script>
-    const hamburger = document.getElementById('hamburger');
-    const navMenu = document.querySelector('.nav ul');
+<!-- CTA Section -->
+<section class="cta-section">
+  <div class="cta-text">
+    <h2 data-i18n="bd.we.description1" >Empieza a mejorar tu <br> inventario hoy mismo</h2>
+  </div>
+  <div class="cta-button">
+    <a data-i18n="bd.we.description2" href="#" class="btn-crear-cuenta">Crear cuenta gratis</a>
+  </div>
+</section>
 
-    hamburger.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-    }); 
-  </script>
+<!-- Footer Section -->
+<footer>
+  <div class="footer-container">
+    <div class="footer-info">
+      <h2>StockWise</h2>
+      <p data-i18n="bd.footer.description" >Soluciones inteligentes para la gestión de inventario</p>
+    </div>
+    <div class="footer-social">
+      <h3 data-i18n="bd.footer.description1" >Redes</h3>
+      <div class="social-icons">
+        <a href="#"><img src="assets/facebook.png" alt="Facebook"></a>
+        <a href="#"><img src="assets/twitter.png" alt="Twitter"></a>
+        <a href="#"><img src="assets/instagram.png" alt="Instagram"></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p data-i18n="bd.footer.description2" >© 2025 StockWise. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.querySelector('.nav ul');
+
+  hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+  });
+</script>
 
 
 </body>
