@@ -481,13 +481,11 @@ p {
     align-items: center;
     padding: 75px 20px;
     gap: 30px;
-    background-color: var(--beige); /* Fondo oscuro */
+  /*background-color: var(--beige); */
     border-radius: 12px;
     box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
     text-align: center;
 }
-
-
 
 .about-section h2 {
     font-family: var(--fuente-1);
