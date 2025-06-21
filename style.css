@@ -124,6 +124,7 @@ body {
 .nosotros {
   text-align: center;
   padding: 40px 20px;
+  background-color: white;
 }
 
 .nosotros h1 {
@@ -148,7 +149,7 @@ body {
 }
 
 .tarjeta {
-  background-color: #f0f0f0;
+  background-color: #D9D593;
   padding: 20px;
   border-radius: 12px;
   width: 420px;
