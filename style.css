@@ -79,11 +79,12 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 50px 10%;
-  flex-wrap: wrap;
   background-color: #fff1c4;
+  gap: 40px;
 }
 
 .hero-texto {
+  flex: 1;
   max-width: 500px;
 }
 
@@ -109,9 +110,14 @@ body {
   border-radius: 8px;
 }
 
+.hero-imagen {
+  flex-shrink: 0;
+}
+
 .hero-imagen img {
   width: 350px;
   max-width: 100%;
+  height: auto;
 }
 
 /* NOSOTROS */
