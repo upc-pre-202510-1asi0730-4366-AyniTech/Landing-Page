@@ -487,19 +487,13 @@ p {
     text-align: center;
 }
 
-.about-section .section-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    max-width: 800px;
-}
+
 
 .about-section h2 {
     font-family: var(--fuente-1);
     font-size: 48px;
     font-weight: 700;
-    color: var(--brown); /* Color de texto claro */
+    color: var(--brown); 
     margin: 0;
 }
 
@@ -539,7 +533,7 @@ p {
 }
 
 .about-section .button1 {
-    background-color: #f7941d; /* Botón rojo */
+    background-color: #f7941d; 
     box-shadow: 0px 4px 6px rgba(230, 57, 70, 0.3);
 }
 
@@ -550,7 +544,7 @@ p {
 }
 
 .about-section .button2 {
-    background-color: #dfad08; /* Botón azul */
+    background-color: #dfad08; 
     box-shadow: 0px 4px 6px rgba(69, 123, 157, 0.3);
 }
 
