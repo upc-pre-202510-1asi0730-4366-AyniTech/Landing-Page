@@ -473,6 +473,94 @@ p {
   color: white;
 }
 
+/* Seccion de boton videos */
+.about-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 75px 20px;
+    gap: 30px;
+    background-color: var(--azul-oscuro); /* Fondo oscuro */
+    border-radius: 12px;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.about-section .section-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-width: 800px;
+}
+
+.about-section h2 {
+    font-family: var(--fuente-1);
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--beige); /* Color de texto claro */
+    margin: 0;
+}
+
+.about-section p {
+    font-family: var(--fuente-2);
+    font-size: 18px;
+    color: var(--beige);
+    line-height: 1.5;
+    margin: 0;
+}
+
+.about-section .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.about-section .buttons a {
+    text-decoration: none;
+    font-family: var(--fuente-2);
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+}
+
+.about-section .button1,
+.about-section .button2 {
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    font-family: var(--fuente-2);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.about-section .button1 {
+    background-color: #e63946; /* Botón rojo */
+    box-shadow: 0px 4px 6px rgba(230, 57, 70, 0.3);
+}
+
+.about-section .button1:hover {
+    background-color: #d62839;
+    transform: scale(1.05);
+    box-shadow: 0px 6px 8px rgba(230, 57, 70, 0.5);
+}
+
+.about-section .button2 {
+    background-color: #457b9d; /* Botón azul */
+    box-shadow: 0px 4px 6px rgba(69, 123, 157, 0.3);
+}
+
+.about-section .button2:hover {
+    background-color: #1d3557;
+    transform: scale(1.05);
+    box-shadow: 0px 6px 8px rgba(69, 123, 157, 0.5);
+}
+
+
 @media (max-width: 768px) {
   .details__plans {
     width: 90%;
@@ -568,6 +656,39 @@ p {
   .language-switch {
     margin-top: 0;
   }
+
+   .about-section h2 {
+        font-size: 36px;
+    }
+
+    .about-section p {
+        font-size: 14px;
+    }
+
+    .about-section .buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 360px) {
+    .about-section {
+        padding: 30px 10px;
+    }
+
+    .about-section h2 {
+        font-size: 28px;
+    }
+
+    .about-section p {
+        font-size: 12px;
+    }
+
+    .about-section .button1,
+    .about-section .button2 {
+        width: 100%;
+        padding: 10px;
+    }
 }
 
 
